@@ -7,3 +7,8 @@ console.log(name);
 function sagHallo(){
     alert("Hallo, Sofia");
 }
+
+
+document.querySelector("button").addEventListener("click", function() { 
+    alert("EventListener hat funktioniert!"); 
+}); 
