@@ -1,5 +1,3 @@
-// Test-Ausgabe zur Überprüfung der Einbindung
-//console.log("Die Datei script.js wurde erfolgreich geladen!");
 
 let name = "Sofia";
 console.log(name);
@@ -9,6 +7,21 @@ function sagHallo(){
 }
 
 
-document.querySelector("button").addEventListener("click", function() { 
-    alert("EventListener hat funktioniert!"); 
-}); 
+const eingabeFeld = document.querySelector("input");
+const ausgabeDiv = document.querySelector("div");
+const meinButton = document.querySelector("button");
+
+
+meinButton.addEventListener("click", function(event) {
+    
+    event.preventDefault(); 
+    
+    
+    console.log("Кнопку натиснуто, магія починається!"); 
+    
+    
+    const textAusEingabe = eingabeFeld.value;
+    
+    
+    ausgabeDiv.textContent = textAusEingabe;
+});

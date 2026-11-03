@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!---- *Arbeitsauftrag 1* ---------------------------------------------------------------------------------->      
 <html lang="de">
 <head>
     <meta charset="UTF-8">
@@ -10,9 +11,9 @@
 
     <div class="todo-container">
         <h1>Meine To-Do-Liste</h1>
-        
-        <!-- Formular für die Eingabe -->
-        <form id="todo-form">
+        <button onclick="sagHallo()">Klick mich!  </button>
+    
+        <form id="todo-input">
             <input type="text" id="todo-input" placeholder="Neue Aufgabe hinzufügen..." required>
             <button type="submit" id="add-button">Hinzufügen</button>
         </form>
@@ -22,15 +23,16 @@
             <!-- Hier landen später die dynamischen To-Dos -->
         </ul>
     </div>
-
-    <!-- JavaScript-Datei einbinden -->
+    
     <script src="script.js"></script>
 
     <script>
     
     sagHallo();
-    <button onclick="sagHallo()">Klick mich!  </button>
+   
     
     </script>
+<!---------------------------------------------------------------------------------------------------------->
+
 </body>
 </html>
