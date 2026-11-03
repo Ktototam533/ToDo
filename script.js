@@ -1,27 +1,32 @@
-
-let name = "Sofia";
-console.log(name);
-
 function sagHallo(){
     alert("Hallo, Sofia");
 }
 
+// FEHLERBEHEBUNG: # für IDs und . für Klassen hinzufügen!
+// Außerdem nutzen wir direkt die <ul> Liste für die Ausgabe
+const eingabeFeld = document.querySelector("#todo-input input"); // Sucht das input im Formular
+const ausgabeListe = document.querySelector("#todo-list");       // Sucht die <ul> Liste
+const meinFormular = document.querySelector("#todo-input");      // Wir überwachen das ganze Formular
 
-const eingabeFeld = document.querySelector("input");
-const ausgabeDiv = document.querySelector("div");
-const meinButton = document.querySelector("button");
-
-
-meinButton.addEventListener("click", function(event) {
+// TIPP: Lausche lieber auf das Formular-Senden ("submit") statt nur auf den Button-Klick.
+// Dadurch funktioniert auch die "Enter"-Taste und das "required"-Attribut klappt!
+meinFormular.addEventListener("submit", function(event) {
     
-    event.preventDefault(); 
+    event.preventDefault(); // Verhindert, dass die Seite neu lädt
     
-    
-    console.log("Кнопку натиснуто, магія починається!"); 
-    
+    console.log("Formular abgeschickt, Magie beginnt!"); 
     
     const textAusEingabe = eingabeFeld.value;
     
+    // 1. Ein neues Listen-Element (<li>) erstellen
+    const neuesListenElement = document.createElement("li");
     
-    ausgabeDiv.textContent = textAusEingabe;
+    // 2. Den Text der Aufgabe in das neue Element schreiben
+    neuesListenElement.textContent = textAusEingabe;
+    
+    // 3. Das neue Element in unsere <ul> Liste einfügen
+    ausgabeListe.appendChild(neuesListenElement);
+    
+    // 4. Das Eingabefeld wieder leeren, damit man die nächste Aufgabe eintippen kann
+    eingabeFeld.value = "";
 });
